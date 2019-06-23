@@ -13,11 +13,11 @@
     <div class="container">
         <form action="/getInfo" method="GET">
             <label for="package">What Type of Package Do You Have?</label>
-            <select id="package" name="package">
-                <option value="stampedletter">Stamped Letter</option>
-                <option value="meteredletter">Metered Letter</option>
-                <option value="largeenvelope">Large Envelope</option>
-                <option value="fcps">First-Class Package Service</option>
+            <select name="package">
+                <option name="stampedletter" value="stampedletter">Stamped Letter</option>
+                <option name="meteredletter" value="meteredletter">Metered Letter</option>
+                <option name="largeenvelope" value="largeenvelope">Large Envelope</option>
+                <option name="fcps" value="fcps">First-Class Package Service</option>
             </select>
 
             <label for="weight">How Much Does Your Package Weigh(oz)?</label>
@@ -37,11 +37,8 @@
                 <option value="12">12 oz</option>
                 <option value="13">13 oz</option>
             </select>
-
             <button type="submit" class="btn btn-info btn-block">Calculate!</button>
-
         </form>
     </div>
-
 </body>
 </html>
