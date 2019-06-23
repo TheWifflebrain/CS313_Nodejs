@@ -41,8 +41,8 @@ function sLetter(res, weight){
       price = 1.00
       break
   }
-
-  var params = {package: package, weight: weight.toFixed(2), price: price};
+  var price1 = Number.parseFloat(price).toFixed(2)
+  var params = {package: package, weight: weight, price: price1};
 	res.render('pages/cost', params);
 }
 
@@ -112,7 +112,8 @@ function lEnvelope(res, weight){
       price = 2.80
       break
   }
-  var params = {package: package, weight: weight.toFixed(2), price: price};
+  var price1 = Number.parseFloat(price).toFixed(2)
+  var params = {package: package, weight: weight, price: price1};
 	res.render('pages/cost', params);
 }
 
@@ -142,7 +143,8 @@ function fcps(res, weight){
       price = 5.71
       break
   }
-  var params = {package: package, weight: weight.toFixed(2), price: price};
+  var price1 = Number.parseFloat(price).toFixed(2)
+  var params = {package: package, weight: weight, price: price1};
 	res.render('pages/cost', params);
 }
 
