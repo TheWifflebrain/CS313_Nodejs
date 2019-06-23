@@ -12,7 +12,7 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 function getInfo(req, res){
-  var package = request.query.package
+  var package = "stampedletter"
   var weight = req.query.weight
 
     if(package == "stampedletter" && weight <= 3.5)
