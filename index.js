@@ -7,7 +7,7 @@ express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('views/pages'))
+  .get('/', (req, res) => res.render('public/index'))
   .get('/getInfo', getInfo)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
@@ -43,7 +43,7 @@ function sLetter(weight){
       break
   }
   var params = {package: package, weight: weight, price: price};
-	res.render("cost", params);
+	res.render("pages/cost", params);
 }
 
 function mLetter(weight){
