@@ -63,7 +63,7 @@ function mLetter(res, weight){
       price = 0.95
       break
   }
-  price = price.toFixed(2);
+  price = Number.parseFloat(price).toFixed(2);
   var params = {package: package, weight: weight, price: price};
 	res.render('pages/cost', params);
 }
