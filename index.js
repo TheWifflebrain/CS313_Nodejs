@@ -63,7 +63,7 @@ function mLetter(res, weight){
       break
   }
   var params = {package: package, weight: weight, price: price};
-	res.render("pages/cost", params);
+	res.render('pages/cost', params);
 }
 
 function lEnvelope(res, weight){
@@ -111,7 +111,7 @@ function lEnvelope(res, weight){
       break
   }
   var params = {package: package, weight: weight, price: price};
-	res.render("pages/cost", params);
+	res.render('pages/cost', params);
 }
 
 function fcps(res, weight){
@@ -141,6 +141,6 @@ function fcps(res, weight){
       break
   }
   var params = {package: package, weight: weight, price: price};
-	res.render("pages/cost", params);
+	res.render('pages/cost', params);
 }
 
