@@ -18,10 +18,10 @@ function getInfo(req, res){
       sLetter(res, weight)
     else if(package == "meteredletter" && weight <= 3.5)
       mLetter(res, weight)
-    else if(package == "largeenvelope")
-      lEnvelope(res, weight)
-    else
+    else if(package == "fcps")
       fcps(res, weight)
+    else
+      lEnvelope(res, weight)
 }
 
 function sLetter(res, weight){
@@ -112,8 +112,8 @@ function lEnvelope(res, weight){
       price = 2.80
       break
   }
-  var price1 = Number.parseFloat(price).toFixed(2)
-  var params = {package: package, weight: weight, price: price1};
+  var message = "*If the package you selected is not a Large Envelope it will be conisidered one because it weighs over 3.5 oz. The weight limit for metered and stamped letters."
+  var params = {package: package, weight: weight, price: price1, message: message};
 	res.render('pages/cost', params);
 }
 
