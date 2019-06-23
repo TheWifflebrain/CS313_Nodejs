@@ -2,9 +2,6 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 var app = express();
-app.use(express.static("public"));
-app.set("views", "views");
-app.set("view engine", "ejs");
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
