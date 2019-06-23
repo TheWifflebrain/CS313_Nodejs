@@ -1,7 +1,6 @@
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
-const app = express();
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
@@ -43,7 +42,7 @@ function sLetter(res, weight){
       break
   }
   var params = {package: package, weight: weight, price: price};
-	res.render('/pages/cost', params);
+	res.render('pages/cost', params);
 }
 
 function mLetter(res, weight){
