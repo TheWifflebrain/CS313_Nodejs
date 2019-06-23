@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Postal Rates</title>
+</head>
+<body>
+    <h1>Find how much your package will cost to ship!</h1>
+    <div class="container">
+        <form action="/getCost" method="GET">
+            <label for="package">What Type of Package Do You Have?</label>
+            <select id="package" name="package">
+                <option value="stampedletter">Stamped Letter</option>
+                <option value="meteredletter">Metered Letter</option>
+                <option value="largeenvelope">Large Envelope</option>
+                <option value="fcps">First-Class Package Service</option>
+            </select>
+
+            <label for="weight">How Much Does Your Package Weigh(oz)?</label>
+            <select id="weight" name="weight">
+                <input type="number" step="0.01" min="0" name="weight" max="13" placeholder="Enter Weight in oz.">
+            </select>
+
+            <button type="submit">Calculate!</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
