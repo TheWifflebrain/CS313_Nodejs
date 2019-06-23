@@ -42,7 +42,7 @@ function sLetter(weight){
       break
   }
   var params = {package: package, weight: weight, price: price};
-	res.render("cost", params);
+	res.render("../views/cost", params);
 }
 
 function mLetter(weight){
