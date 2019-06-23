@@ -17,7 +17,7 @@ function getInfo(req, res){
     if(package == "stampedletter" && weight <= 3.5)
       sLetter(res, weight)
     else if(package == "meteredletter" && weight <= 3.5)
-      mLetter(weight)
+      mLetter(res, weight)
     else if(package == "largeenvelope")
       lEnvelope(res, weight)
     else
@@ -41,7 +41,8 @@ function sLetter(res, weight){
       price = 1.00
       break
   }
-  var params = {package: package, weight: weight, price: price};
+
+  var params = {package: package, weight: weight.toFixed(2), price: price};
 	res.render('pages/cost', params);
 }
 
@@ -62,7 +63,7 @@ function mLetter(res, weight){
       price = 0.95
       break
   }
-  var params = {package: package, weight: weight, price: price};
+  var params = {package: package, weight: weight.toFixed(2), price: price};
 	res.render('pages/cost', params);
 }
 
@@ -110,7 +111,7 @@ function lEnvelope(res, weight){
       price = 2.80
       break
   }
-  var params = {package: package, weight: weight, price: price};
+  var params = {package: package, weight: weight.toFixed(2), price: price};
 	res.render('pages/cost', params);
 }
 
@@ -140,7 +141,7 @@ function fcps(res, weight){
       price = 5.71
       break
   }
-  var params = {package: package, weight: weight, price: price};
+  var params = {package: package, weight: weight.toFixed(2), price: price};
 	res.render('pages/cost', params);
 }
 
