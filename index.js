@@ -8,11 +8,11 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('public/index'))
-  .get('/cost', getInfo)
+  .get('/getInfo', getInfo)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 function getInfo(req, res){
-  var package = "stampedletter"
+  var package = req.query.package
   var weight = req.query.weight
 
     if(package == "stampedletter" && weight <= 3.5)
