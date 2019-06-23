@@ -14,14 +14,14 @@ function getInfo(req, res){
   var package = req.query.package
   var weight = req.query.weight
 
-    if(package == "stampedletter" && weight <= 3.5)
-      sLetter(res, weight)
-    else if(package == "meteredletter" && weight <= 3.5)
-      mLetter(res, weight)
-    else if(package == "fcps")
-      fcps(res, weight)
-    else
-      lEnvelope(res, weight)
+  if(package == "stampedletter" && weight <= 3.5)
+    sLetter(res, weight)
+  else if(package == "meteredletter" && weight <= 3.5)
+    mLetter(res, weight)
+  else if(package == "fcps")
+    fcps(res, weight)
+  else
+    lEnvelope(res, weight)
 }
 
 function sLetter(res, weight){
@@ -42,7 +42,8 @@ function sLetter(res, weight){
       break
   }
   var price1 = Number.parseFloat(price).toFixed(2)
-  var params = {package: package, weight: weight, price: price1};
+  var message = ""
+  var params = {package: package, weight: weight, price: price1, message: message};
 	res.render('pages/cost', params);
 }
 
@@ -64,7 +65,8 @@ function mLetter(res, weight){
       break
   }
   var price1 = Number.parseFloat(price).toFixed(2)
-  var params = {package: package, weight: weight, price: price1};
+  var message = ""
+  var params = {package: package, weight: weight, price: price1, message: message};
 	res.render('pages/cost', params);
 }
 
@@ -145,7 +147,8 @@ function fcps(res, weight){
       break
   }
   var price1 = Number.parseFloat(price).toFixed(2)
-  var params = {package: package, weight: weight, price: price1};
+  var message = ""
+  var params = {package: package, weight: weight, price: price1, message: message};
 	res.render('pages/cost', params);
 }
 
