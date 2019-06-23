@@ -26,6 +26,7 @@ function getInfo(req, res){
 
 function sLetter(weight){
   var price;
+  var package = "Stamped Letter"
   switch(weight){
     case 1:
       price = 0.55
@@ -40,10 +41,13 @@ function sLetter(weight){
       price = 1.00
       break
   }
+  var params = {package: package, weight: weight, price: price};
+	res.render("pages/cost", params);
 }
 
 function mLetter(weight){
   var price;
+  var package = "Metered Letter"
   switch(weight){
     case 1:
       price = 0.50
@@ -58,10 +62,13 @@ function mLetter(weight){
       price = 0.95
       break
   }
+  var params = {package: package, weight: weight, price: price};
+	res.render("pages/cost", params);
 }
 
 function lEnvelope(weight){
   var price;
+  var package = "Large Envelope"
   switch(weight){
     case 1:
       price = 1.00
@@ -103,10 +110,13 @@ function lEnvelope(weight){
       price = 2.80
       break
   }
+  var params = {package: package, weight: weight, price: price};
+	res.render("pages/cost", params);
 }
 
 function fcps(weight){
   var price;
+  var package = "First Class Package Service"
   switch(weight){
     case 1:
     case 2:
@@ -130,5 +140,7 @@ function fcps(weight){
       price = 5.71
       break
   }
+  var params = {package: package, weight: weight, price: price};
+	res.render("pages/cost", params);
 }
 
