@@ -113,7 +113,7 @@ function lEnvelope(res, weight){
       break
   }
   var price1 = Number.parseFloat(price).toFixed(2)
-  var message = "*If the package you selected is not a Large Envelope it will be conisidered one because it weighs over 3.5 oz. The weight limit for metered and stamped letters."
+  var message = "*If the package you selected is not a Large Envelope it will be conisidered one because it weighs over 3.5 oz which is the weight limit for metered and stamped letters."
   var params = {package: package, weight: weight, price: price1, message: message};
 	res.render('pages/cost', params);
 }
