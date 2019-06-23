@@ -16,16 +16,16 @@ function getInfo(req, res){
   var weight = req.query.weight
 
     if(package == "stampedletter" && weight <= 3.5)
-      sLetter(weight)
+      sLetter(res, weight)
     else if(package == "meteredletter" && weight <= 3.5)
       mLetter(weight)
     else if(package == "largeenvelope")
-      lEnvelope(weight)
+      lEnvelope(res, weight)
     else
-      fcps(weight)
+      fcps(res, weight)
 }
 
-function sLetter(weight){
+function sLetter(res, weight){
   var price;
   var package = "Stamped Letter"
   switch(weight){
@@ -46,7 +46,7 @@ function sLetter(weight){
 	res.render("/views/pages/cost", params);
 }
 
-function mLetter(weight){
+function mLetter(res, weight){
   var price;
   var package = "Metered Letter"
   switch(weight){
@@ -67,7 +67,7 @@ function mLetter(weight){
 	res.render("pages/cost", params);
 }
 
-function lEnvelope(weight){
+function lEnvelope(res, weight){
   var price;
   var package = "Large Envelope"
   switch(weight){
@@ -115,7 +115,7 @@ function lEnvelope(weight){
 	res.render("pages/cost", params);
 }
 
-function fcps(weight){
+function fcps(res, weight){
   var price;
   var package = "First Class Package Service"
   switch(weight){
