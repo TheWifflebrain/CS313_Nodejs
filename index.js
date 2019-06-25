@@ -7,10 +7,10 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('public/index'))
-  .get('/getInfo', getInfo)
+  .get('/getRate', getRate)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-function getInfo(req, res){
+function getRate(req, res){
   var package = req.query.package
   var weight = req.query.weight
 
