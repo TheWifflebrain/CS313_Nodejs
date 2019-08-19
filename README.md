@@ -1,3 +1,6 @@
+# Description
+A website for keyboard enthusiasts to document their keyboards, switches, and keycaps into a database.
+
 # Link
 https://dry-basin-27492.herokuapp.com/homepage.html
 
